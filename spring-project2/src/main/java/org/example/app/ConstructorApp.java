@@ -1,15 +1,15 @@
 package org.example.app;
 
 import org.example.coach.Coach;
+import org.example.coach.TennisCoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AnnotationApp {
+public class ConstructorApp {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Coach coach = context.getBean("tennisCoach", Coach.class);
-        Coach coach2 = context.getBean("balletCoach",Coach.class);
+        TennisCoach coach = context.getBean("tennisCoach", TennisCoach.class);
         System.out.println(coach.getDailyWorkout());
-        System.out.println(coach2.getDailyWorkout());
+        System.out.println(coach.getFortuneService());
         context.close();
     }
 }
