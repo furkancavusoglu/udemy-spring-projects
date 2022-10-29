@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="sport.properties"/>
+
+    <!-- Define your beans here -->
+    <bean id="myFortune" class="org.example.fortuneservice.HappyFortuneService"/>
+    <bean id="myRandomFortune" class="org.example.fortuneservice.RandomFortuneService"/>
+
+    <bean id="myCoach" class="org.example.coach.TrackCoach">
+        <constructor-arg ref="myFortune" name="fortuneService"/>
+    </bean>
+    <bean id="myCoach2" class="org.example.coach.BaseballCoach">
+        <property ref="myFortune" name="fortuneService"/>
+    </bean>
+    <bean id="myCricketCoach" class="org.example.coach.CricketCoach">
+        <property name="fortuneService" ref="myFortune"/>
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
+    </bean>
+
+    <bean id="myBasketballCoach" class="org.example.coach.BasketballCoach">
+        <constructor-arg ref="myRandomFortune" name="fortuneService"/>
+    </bean>
+
+</beans>
+
+
+
+
+
