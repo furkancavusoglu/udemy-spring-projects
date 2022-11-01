@@ -11,7 +11,7 @@ public class RandomFortuneService implements FortuneService {
     };
 
     @Override
-    public String getDailyFortune() {
+    public String getFortune() {
         Random random = new Random();
         return data[random.nextInt(data.length)];
     }

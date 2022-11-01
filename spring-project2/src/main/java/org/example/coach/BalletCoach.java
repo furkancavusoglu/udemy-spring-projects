@@ -8,4 +8,10 @@ public class BalletCoach implements Coach {
     public String getDailyWorkout() {
         return "Do ballet";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
+
 }

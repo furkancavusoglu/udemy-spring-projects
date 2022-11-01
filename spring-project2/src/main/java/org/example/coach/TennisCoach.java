@@ -28,8 +28,13 @@ public class TennisCoach implements Coach {
         return "work tennis stuff";
     }
 
+    @Override
+    public String getDailyFortune() {
+        return fortuneService.getFortune();
+    }
+
     public String getFortuneService() {
-        return fortuneService.getDailyFortune();
+        return fortuneService.getFortune();
     }
 
     @PostConstruct
