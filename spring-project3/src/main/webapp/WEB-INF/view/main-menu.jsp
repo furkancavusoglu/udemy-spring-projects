@@ -9,8 +9,10 @@
 </head>
 <body>
 <h1>Main Page</h1>
-<a href="showForm">Navigate To Form</a>
-<br>
+<a href="hello/showForm">Navigate To Form</a>
+<br> <br>
+<a href="student/showForm">Navigate to Student Form</a>
+<br> <br>
 <input type="button" onclick="doSomeWork()" value="Click Me"/>
 </body>
 </html>
