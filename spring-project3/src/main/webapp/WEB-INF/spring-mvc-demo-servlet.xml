@@ -19,6 +19,10 @@
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <util:properties id="countryOptions" location="classpath:countries.properties"/>
 
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames" value="messages"/>
+    </bean>
+
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"/>
